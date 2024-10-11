@@ -1,39 +1,17 @@
-# This file contains math functions: exponentiation, square root, absolute value, and cube.
-# These functions expand the capabilities of our calculator by performing more advanced math operations.
+# This line imports the "calculator" function from another file.
+# Think of "calculator" as a tool or function that we previously created elsewhere,
+# and now we are telling the program, "Find that calculator tool for us."
+# The "app" is like a folder, and inside it, there's a file called "calculator.py",
+# which contains the "calculator" function that we need.
+from app.calculator import calculator
 
+# This part is crucial! It checks if this file is being run directly.
+# Here's how it works: in Python, we sometimes run files directly, and other times we use them as part of other programs.
+# The variable "__name__" is special in Python and helps determine how a file is being run.
+# If "__name__" equals "__main__", it means we are running the file directly.
 
-def exponentiation(base: float, exp: float) -> float:
-    """
-    This function takes two numbers: 'base' and 'exp', and returns 'base' raised to the power of 'exp' (base ** exp).
-    'base' is the number we want to multiply by itself 'exp' times.
-    Example: if we call exponentiation(2.0, 3.0), it will return 8.0 (because 2 * 2 * 2 = 8).
-    """
-    return base ** exp  # This raises the base to the power of exp and returns the result.
-
-def square_root(a: float) -> float:
-    """
-    This function takes one number (a) and returns its square root (math.sqrt(a)).
-    The square root is a number that, when multiplied by itself, equals the original number.
-    BUT, we cannot take the square root of a negative number, so we raise a 'ValueError' if 'a' is negative.
-    Example: if we call square_root(16.0), it will return 4.0 (because 4 * 4 = 16).
-    """
-    if a < 0:
-        # This part checks if 'a' is negative. If it is, we raise an error since the square root of a negative number is not allowed.
-        raise ValueError("Square root of negative number is not allowed.")  # Error message for negative input.
-    return a ** 0.5  # This calculates the square root of the number and returns the result.
-
-def absolute_value(a: float) -> float:
-    """
-    This function takes one number (a) and returns its absolute value (abs(a)).
-    The absolute value of a number is its distance from zero, so it removes any negative sign.
-    Example: if we call absolute_value(-5.0), it will return 5.0.
-    """
-    return abs(a)  # This returns the absolute value of the number 'a'.
-
-def cube(a: float) -> float:
-    """
-    This function takes one number (a) and returns its cube (a ** 3).
-    Cubing a number means multiplying it by itself two more times.
-    Example: if we call cube(3.0), it will return 27.0 (because 3 * 3 * 3 = 27).
-    """
-    return a ** 3  # This calculates the cube of the number and returns the result.
+# In simple terms, this line says: "If this program is being run directly, start the calculator."
+if __name__ == "__main__":
+    # Here, we use the calculator function we imported earlier. This will launch the calculator, 
+    # which will keep running and performing math operations based on user input.
+    calculator()

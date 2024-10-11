@@ -1,6 +1,11 @@
 # tests/test_operations.py
+"""
+Unit tests for operations such as exponentiation, square root, absolute value, and cube.
+"""
+
 import pytest
 from app.operations import exponentiation, square_root, absolute_value, cube
+
 
 def test_exponentiation_positive():
     """Test positive cases for exponentiation."""
